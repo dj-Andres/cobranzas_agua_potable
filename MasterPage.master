@@ -1,0 +1,183 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>3 men corporation</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="icon"  href="imagenes/logoAGUA.ico">
+    <!----validar retroceder--->
+    <script type="text/javascript" language="javascript">
+        function DisableBackButton() {
+            window.history.forward()
+        }
+        DisableBackButton();
+        window.onload = DisableBackButton;
+        window.onpageshow = function (evt) { if (evt.persisted) DisableBackButton() }
+        window.onunload = function () { void (0) }
+ </script>   
+
+</head>
+<body>
+    <form id="form1" runat="server">
+<header>
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegation-fm">
+						<span class="sr-only">Desplegar / Ocultar Menú</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+                        
+					</button>
+					<a href="#" class="navbar-brand">Proyecto Agua Potable</a>
+				</div>
+				<!-----inicia el menu--->
+				<div class="collapse navbar-collapse" id="navegation-fm">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="socios.aspx">Socios</a></li>
+						<li class=""><a href="Default.aspx">Consumo</a></li>
+						<<li class=""><a href="recibos.aspx">Planilla</a></li>
+						<li class=""><a href="#">Contacto</a></li>
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"><i class='glyphicon glyphicon-off'></i> Salir</asp:LinkButton>
+						<ul  class="nav navbar-nav ">
+							<!--<<li><a href="login.aspx"><i class='glyphicon glyphicon-off'></i> Salir</a></li>-->
+                            
+						</ul>
+                        
+					</ul>
+				</div>				
+			</div>
+		</nav>
+</header>
+    
+    <div class="col-12-md">
+        
+             
+    
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        
+             
+    
+    </div>
+	
+
+
+	
+	
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#dvGridwidth').width($('#dvScreenWidth').width());
+        });
+        function onKeyDecimal(e, thix) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if (document.getElementById(thix.id).value.indexOf('.') != -1 && keynum == 46)
+                return false;
+            if ((keynum == 8 || keynum == 48 || keynum == 46))
+                return true;
+            if (keynum <= 47 || keynum >= 58) return false;
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+
+        function justNumbers(e) {
+            var keynum = window.event ? window.event.keyCode : e.which;
+            if ((keynum == 8 || keynum == 48))
+                return true;
+            if (keynum <= 47 || keynum >= 58) return false;
+            return /\d/.test(String.fromCharCode(keynum));
+        }
+
+        function soloLetras(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+                return true;
+
+            return false;
+        }
+    </script>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+    </form>
+    <style type="text/css">	
+		.guardar
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/guardar.ico') no-repeat center;
+		}
+        .nuevo
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/agg.ico') no-repeat center;
+		}
+         .modificar
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/modificar.ico') no-repeat center;
+		}
+         .eliminar
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/eliminar.ico') no-repeat center;
+		}
+         .cancelar
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/cancelar.ico') no-repeat center;
+		}
+         .buscar
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/buscar.ico') no-repeat center;
+		}
+         .excel
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/excel.ico') no-repeat center;
+		}
+         .buscar_socio
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/buscar_socio.ico') no-repeat center;
+		}
+         .eliminado_usuario
+        {
+			border: 1px solid #868686;
+			border-radius: 5px;
+			color: black;
+			padding:10px,10px,10px,25px;
+			background:#EDEDED url('../imagenes/eliminado_usuario.ico') no-repeat center;
+		}
+	</style>
+</body>
+</html>
