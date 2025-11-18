@@ -16,7 +16,7 @@
  ## Modulo de Login 
  
   Las credenciales del sistemas son las siguientes: 
-  <b>User:</b>0707012605
+  <b>User:</b>09999999
   <b>Pass:</b>123456
  ## Modulo de Socios
  
